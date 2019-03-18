@@ -5,9 +5,10 @@ class Anagram
     @word = word 
   end
   
-  def match(array_of_possible_anagrams) 
-    array_of_possible_anagrams.collect do |word|
-      word if word.split("").sort == @word.split("").sort
+  def match(array_of_possible_anagrams)
+    new_array = []
+    array_of_possible_anagrams.each do |word|
+      new_array << word if word.split("").sort == @word.split("").sort
     end 
   end 
   
